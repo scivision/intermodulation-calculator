@@ -1,0 +1,155 @@
+=========================================================
+ Intermod Study      program (c) 1996 Aksala Electronics 
+   Difference for hit = 0.049 MHz
+   Frequencies more than  50 MHz apart not compared.
+
+  This is the list of frequencies for the study:
+
+   52.5700   WL7AML-3          52.5700   WL7AML-3
+  102.7000   KPEN             129.6000   PEN Air 
+  104.9000   KWVV             145.0100   WL7AML 3
+  107.1000   MOODY            146.2800   KL7HIXin
+  129.6000   Pen Air          155.3100   Harb IN 
+  145.0100   WL7AML 3         155.9100   POL IN  
+  146.8800   KL7HIXot         155.9550   CITY    
+  152.2400   KRI              156.0150   City    
+  153.7250   KEA OUT          156.4500   Mar 9   
+  155.0100   POL OUT          156.8000   Mar 16  
+  155.9550   CITY             158.2650   KEA IN  
+  156.0150   CITY             159.4950   SEALAND 
+  156.1500   HARB OUT         166.3000   NPS     
+  156.4500   KING C           449.2000   WL7AML-2
+  156.8000   KING C           449.8500   AL7LQ IN
+  159.4950   SEALAND          451.9250   BECKER  
+  162.5500   WEATHER          456.5000   TUNI IN 
+  168.2250   NPS              456.9250   Becker  
+  439.2500   ATV              466.0125   BREC REM
+  444.2000   WL7AML 2         466.1125   PIL-LK-1
+  444.8500   AL7LQout         466.3250   Cable TV
+  451.5000   TUNI OUT         466.5750   AKS#3 IN
+  461.1125   PIL-Lk-1         466.8875   PEN AIR 
+  461.3250   CableTV          466.9750   AK 7    
+  461.5750   AKS#3OUT         467.1625   PIL-LK-2
+  461.8875   Pen AIR          469.1750   BUS IN  
+  461.9750   AK-7             469.2000   AKS#4IN 
+  462.1625   PIL-Lk-2         469.2250   BREC#1IN
+  464.1750   BUS OUT          469.2500   ANC     
+  464.2000   AKS#4OUT         469.3000   KAthy O.
+  464.2250   BRECHOUT         469.4000   AKS#2IN 
+  464.2500   ANC              469.8000   AKS#1 IN
+  464.3000   Kathy O.         806.0125   BB&S125 
+  464.4000   AKS#2OUT         806.0375   AEI0375 
+  464.8000   AKS#1OUT         806.0875   KRI0875 
+  851.0125   bB&S125          816.9625   AKS IN51
+  851.0375   aEI0375          817.9625   AKS IN52
+  851.0875   kRI0875          818.9625   AKS IN53
+  861.9625   AKS 5-1          819.9625   AKS IN54
+  862.9625   AKS 5-2          820.9625   AKS IN55
+  863.9625   AKS 5-3 
+  864.9625   AKS 5-4 
+  865.9625   AKS 5-4 
+
+  Transmitters  43          Receivers   40
+
+==========================================================
+
+
+===== Two Frequency, third-order tests:
+
+  Freq A     Freq B     A B diff   IM prod    Recv Freq  Difference
+  156.1500   156.0150     0.1350   155.8800   155.9100     0.030
+  HARB OUT   CITY                             POL IN            
+
+  159.4950   152.2400     7.2550   144.9850   145.0100     0.025
+  SEALAND    KRI                              WL7AML 3          
+
+  162.5500   159.4950     3.0550   156.4400   156.4500     0.010
+  WEATHER    SEALAND                          Mar 9             
+
+
+===== Two Frequency, fifth-order tests:
+
+  Freq A     Freq B     A B diff   IM prod    Recv Freq  Difference
+  464.8000   462.1625     2.6375   456.8875   456.9250     0.038
+  AKS#1OUT   PIL-Lk-2                         Becker            
+
+
+===== Three Frequency, third-order tests:
+
+  Freq A     Freq B     Freq C     IM prod    Recv Freq  Difference
+  102.7000   104.9000   155.0100    52.5900    52.5700     0.020
+  KPEN       KWVV       POL OUT               WL7AML-3
+
+  152.2400   162.5500   461.1125   146.3225   146.2800     0.043
+  KRI        WEATHER    PIL-Lk-1              KL7HIXin
+
+  153.7250   155.9550   439.2500   129.5700   129.6000     0.030
+  KEA OUT    CITY       ATV                   PEN Air 
+
+  153.7250   159.4950   168.2250   144.9950   145.0100     0.015
+  KEA OUT    SEALAND    NPS                   WL7AML 3
+
+  153.7250   162.5500   461.3250   145.0500   145.0100     0.040
+  KEA OUT    WEATHER    CableTV               WL7AML 3
+
+  155.0100   159.4950   168.2250   146.2800   146.2800     0.000
+  POL OUT    SEALAND    NPS                   KL7HIXin
+
+  155.9550   156.1500   156.8000   155.3050   155.3100     0.005
+  CITY       HARB OUT   KING C                Harb IN 
+
+  155.9550   162.5500   464.8000   146.2950   146.2800     0.015
+  CITY       WEATHER    AKS#1OUT              KL7HIXin
+
+  156.0150   162.5500   464.8000   146.2350   146.2800     0.045
+  CITY       WEATHER    AKS#1OUT              KL7HIXin
+
+  156.1500   159.4950   461.8875   146.2425   146.2800     0.038
+  HARB OUT   SEALAND    Pen AIR               KL7HIXin
+
+  156.8000   159.4950   461.3250   145.0300   145.0100     0.020
+  KING C     SEALAND    CableTV               WL7AML 3
+
+  156.8000   162.5500   464.4000   145.0500   145.0100     0.040
+  KING C     WEATHER    AKS#2OUT              WL7AML 3
+
+  439.2500   464.3000   851.0125    52.5375    52.5700     0.033
+  ATV        Kathy O.   bB&S125               WL7AML-3
+
+  439.2500   464.4000   851.0375    52.6125    52.5700     0.043
+  ATV        AKS#2OUT   aEI0375               WL7AML-3
+
+  439.2500   464.4000   851.0875    52.5625    52.5700     0.008
+  ATV        AKS#2OUT   kRI0875               WL7AML-3
+
+  451.5000   461.8875   464.1750   449.2125   449.2000     0.013
+  TUNI OUT   Pen AIR    BUS OUT               WL7AML-2
+
+  451.5000   461.8875   464.2000   449.1875   449.2000     0.013
+  TUNI OUT   Pen AIR    AKS#4OUT              WL7AML-2
+
+  451.5000   461.8875   464.2250   449.1625   449.2000     0.038
+  TUNI OUT   Pen AIR    BRECHOUT              WL7AML-2
+
+  451.5000   461.9750   464.2500   449.2250   449.2000     0.025
+  TUNI OUT   AK-7       ANC                   WL7AML-2
+
+  451.5000   461.9750   464.3000   449.1750   449.2000     0.025
+  TUNI OUT   AK-7       Kathy O.              WL7AML-2
+
+
+===== Second Harmonic Tests:
+
+-none
+
+===== Third Harmonic Tests:
+
+-none
+
+===== Fourth Harmonic Tests:
+
+-none
+
+===== Fifth Harmonic Tests:
+
+-none
