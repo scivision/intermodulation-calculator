@@ -21,7 +21,7 @@ before_install:
         brew update;
         brew install fpc;
       else
-        sudo apt install fp-compiler
+        sudo apt install fp-compiler;
       fi
 
 script: fpc im.pas
