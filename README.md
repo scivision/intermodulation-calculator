@@ -50,7 +50,7 @@ To edit the transmitter list, just substitute TFREQS in the above.
 
 ## Run intermodulation calculator
 
-    IM out.txt
+    ./im out.txt
 
 This will place the results of the run in a file name `out.txt`.
 
@@ -63,5 +63,5 @@ The program was originally written and compiled with Borland Turbo Pascal 3.0
     Joe Stevens, WL7AML
     Aksala Electronics, Inc. 
     Kodiak, AK  99615  
-    jstevens@ptialaska.net
+    http://www.kadiak.org/joe/
 
