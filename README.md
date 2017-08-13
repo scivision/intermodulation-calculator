@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/scivision/intermodulation-calculator.svg?branch=master)](https://travis-ci.org/scivision/intermodulation-calculator)
+
 # intermodulation-calculator
 Joe Stevens' Pascal Intermodulation product calculator for radio systems. 
 No longer maintained by Joe, originally at http://www.kadiak.org/joe/im.html
