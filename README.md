@@ -15,7 +15,7 @@ You will need a Pascal compiler.
 
 ## Build
 
-    fpc 
+    fpc im.pas
 
 ## Invoke Free Pascal IDE
 If you want to edit Pascal / Turbo Pascal code in general, you can install the Pascal IDE by 

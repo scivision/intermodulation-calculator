@@ -45,17 +45,17 @@ var
 procedure list_a_line_of_tx_rx_frequencies;
 begin
   if rx_freq[a_index] = 0. then
-    writeln (output_file,Form(format_list_short,
-      tx_freq[a_index],
-      tx_comment[a_index]
-      ))
+    writeln (output_file,
+      tx_freq[a_index]:9:4,
+      tx_comment[a_index]:11
+      )
   else
-    writeln (output_file,Form(format_list,
-      tx_freq[a_index],
-      tx_comment[a_index],
-      rx_freq[a_index],
-      rx_comment[a_index]
-      ));
+    writeln (output_file,
+      tx_freq[a_index]:9:4,
+      tx_comment[a_index]:11,
+      rx_freq[a_index]:17:4,
+      rx_comment[a_index]:11
+      );
 end;
 
 
@@ -94,17 +94,17 @@ for a_index :=  1 to no_tx_freqs do
                    if title = 0 then
                    writeln(output_file,title_2f_result);
                    title := 1;
-                   writeln(output_file,form(format_2f_result,
-                                tx_freq[a_index],
-                                tx_freq[b_index],
-                                abs(tx_freq[a_index]-tx_freq[b_index]),
-                                a,
-                                rx_freq[c_index],
-                                abs(a-rx_freq[c_index])));
-                   writeln(output_file,form(format_2f_comment,
-                           tx_comment[a_index],
-                           tx_comment[b_index],
-                           rx_comment[c_index]));
+                   writeln(output_file,
+                                tx_freq[a_index]:9:4,
+                                tx_freq[b_index]:11:4,
+                                abs(tx_freq[a_index]-tx_freq[b_index]):11:4,
+                                a:11:4,
+                                rx_freq[c_index]:11:4,
+                                abs(a-rx_freq[c_index]):11:4);
+                   writeln(output_file,
+                           tx_comment[a_index]:9,
+                           tx_comment[b_index]:11,
+                           rx_comment[c_index]:33);
                    writeln(output_file,'');
                   end; {6}
                end;  {5}
@@ -134,14 +134,14 @@ for a_index :=  1 to no_tx_freqs do
                    if title = 0 then
                    writeln(output_file,title_harmonic_result);
                    title := 1;
-                   writeln(output_file,form(format_harmonic_result,
-                                tx_freq[a_index],
-                                a,
-                                rx_freq[c_index],
-                                abs(a-rx_freq[c_index])));
-                   writeln(output_file,form(format_harmonic_comment,
-                           tx_comment[a_index],
-                           rx_comment[c_index]));
+                   writeln(output_file,
+                                tx_freq[a_index]:9:4,
+                                a:11:4,
+                                rx_freq[c_index]:11:4,
+                                abs(a-rx_freq[c_index]):6:4);
+                   writeln(output_file,
+                           tx_comment[a_index]:9,
+                           rx_comment[c_index]:24);
                    writeln(output_file,'');
                   end; {6}
                end;  {5}
@@ -209,18 +209,18 @@ for a_index :=  1 to no_tx_freqs-1 do
                    if title = 0 then
                    writeln(output_file,title_3f_result);
                    title := 1;
-                   writeln(output_file,form(format_3f_result,
-                                tx_freq[a_index],
-                                tx_freq[b_index],
-                                tx_freq[c_index],
-                                a,
-                                rx_freq[d_index],
-                                abs(a-rx_freq[d_index])));
-                   writeln(output_file,form(format_3f_comment,
-                           tx_comment[a_index],
-                           tx_comment[b_index],
-                           tx_comment[c_index],
-                           rx_comment[d_index]));
+                   writeln(output_file,
+                                tx_freq[a_index]:9:4,
+                                tx_freq[b_index]:11:4,
+                                tx_freq[c_index]:11:4,
+                                a:11:4,
+                                rx_freq[d_index]:11:4,
+                                abs(a-rx_freq[d_index]):11:4);
+                   writeln(output_file,
+                           tx_comment[a_index]:9,
+                           tx_comment[b_index]:11,
+                           tx_comment[c_index]:11,
+                           rx_comment[d_index]:11);
                    writeln(output_file,'');
                   end; {7}
                end;  {6}
@@ -235,7 +235,7 @@ end; {1}
 
 
 begin {1}       { begin main program }
-
+   { writeln('All output from this version will go to a file named ',output_file);}
 { set matrices to zero }
           begin
              for a_index := 1 to max_no_of_freqs do
@@ -256,13 +256,13 @@ begin {1}       { begin main program }
 
 
 { fill transmit frequency matrices }
-          assign(tx_file, 'tfreqs.');
+          assign(tx_file, 'tfreqs');
           {$I-}
           reset(tx_file);
           {$I+}
           if IOresult <> 0 then
             begin
-              writeln(' Cannot find input file TFREQS');
+              writeln(' Cannot find input file "tfreqs"');
               halt;
             end
           else
@@ -277,7 +277,7 @@ begin {1}       { begin main program }
             end;
 
 { fill receive frequency matrices }
-          assign(rx_file, 'rfreqs.');
+          assign(rx_file, 'rfreqs');
           {$I-}
           reset(rx_file);
           {$I+}
@@ -309,7 +309,6 @@ begin {1}       { begin main program }
 
 
 { get operating variables }
-{    writeln('All output from this version will go to a file named ',output_file);}
      df := 0;
      max_apart := 0;
      write  ('Enter max difference MHz for a hit to count [.049] - '); readln(df);
@@ -331,9 +330,9 @@ begin {1}       { begin main program }
      writeln(output_file,'=========================================================');
      writeln(output_file,' Intermod Study      program (c) 1996 Aksala Electronics ');
 
-     writeln(output_file,'   Difference for hit = ',form('#.###',df),' MHz');
+     writeln(output_file,'   Difference for hit = ',df:5:3,' MHz');
 
-     writeln(output_file,'   Frequencies more than ',form('###',max_apart),' MHz apart not compared.');
+     writeln(output_file,'   Frequencies more than ',max_apart:3,' MHz apart not compared.');
 
      writeln(output_file,'');
      writeln(output_file,'  This is the list of frequencies for the study:');
