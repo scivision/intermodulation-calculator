@@ -1,34 +1,48 @@
-[![Build Status](https://travis-ci.org/scivision/intermodulation-calculator.svg?branch=master)](https://travis-ci.org/scivision/intermodulation-calculator)
+.. image:: https://travis-ci.org/scivision/intermodulation-calculator.svg?branch=master
+    :target: https://travis-ci.org/scivision/intermodulation-calculator
 
-# intermodulation-calculator
+==========================
+intermodulation-calculator
+==========================
+
 Joe Stevens' Pascal Intermodulation product calculator for radio systems. 
 No longer maintained by Joe, originally at http://www.kadiak.org/joe/im.html
 
-## Prereq 
-You will need a Pascal compiler. 
+.. contents::
 
-### Linux/Windows Subsystem for Linux
+Prereq 
+======
+You will need a Pascal compiler, such as FreePascal, installable on a very wide variety of platforms, including: 
+
+Linux/Windows Subsystem for Linux
+---------------------------------
+::
 
     apt install fp-compiler fp-ide
 
-### Mac OS
+Mac OS
+------
+::
 
     brew install fpc
 
-## Build
+Build Intermodulation Calculator
+================================
+::
 
     fpc im.pas
 
-## Invoke Free Pascal IDE
-If you want to edit Pascal / Turbo Pascal code in general, you can install the Pascal IDE by 
+Run intermodulation calculator
+==============================
+::
 
-    apt install fp-ide
+    ./im out.txt
 
-and start the text-GUI IDE environment (1990 style) by
+This will place the results of the run in a file name ``out.txt``, using the system configuration data stored in ``rfreqs`` and ``tfreqs``.
 
-    fp
 
-## Program description
+Program description
+===================
 
 This program will run all possible combinations of every transmitter against every receiver in the list.  
 It will allow you to choose the bandwidth of the receivers, which is to say how far removed from a receiver carrier on the list will a hit be reported.  
@@ -38,26 +52,25 @@ The program will NOT report a hit if the DESCRIPTION of any of the frequencies i
 If two transmitters have exactly the same description, it assumes the two frequencies are different channels in the same transmitter and cannot both be on the air at the same time.
 Also if a radio is not duplex as a repeater, it cannot transmit and receive at the same time.  
 So if the receiver has exactly the same description as a transmitter, it will not report a hit. 
- For this purpose CASE IS SIGNIFICANT!  WL7aml does NOT equal WL7AML.
+ For this purpose CASE IS SIGNIFICANT!  
+``WL7aml`` does NOT equal ``WL7AML``.
 
 Descriptions are limited to 8 characters.  
 When modifying the two files of frequencies (RFREQS & TFREQS) keep exactly the same number of characters in the frequency and the description.  
 It reads the column the character is in to determine the information.  
 More than the maximum number of characters will crash the program.
 
-The frequency files, `RFREQS` and `TFREQS`, may be edited with any ASCII editor.  
-To edit the receiver frequency file, edit the file `RFREQS`. 
+The frequency files, ``rfreqs`` and ``tfreqs``, may be edited with any ASCII editor.  
+To edit the receiver frequency file, edit the file ``rfreqs``. 
 When you have finished entering or changing the data, press the F7 key, then ENTER.  
 To edit the transmitter list, just substitute TFREQS in the above.
 
-## Run intermodulation calculator
 
-    ./im out.txt
+Notes
+=====
 
-This will place the results of the run in a file name `out.txt`.
-
-
-## Original author notes 
+Original author
+---------------
 Note that Joe no longer maintains this program.
 
 The program was originally written and compiled with Borland Turbo Pascal 3.0
@@ -67,3 +80,13 @@ The program was originally written and compiled with Borland Turbo Pascal 3.0
     Kodiak, AK  99615  
     http://www.kadiak.org/joe/
 
+
+Invoke Free Pascal IDE
+----------------------
+If you want to edit Pascal / Turbo Pascal code in general, you can install the Pascal IDE by::
+
+    apt install fp-ide
+
+and start the text-GUI IDE environment (1990 style) by::
+
+    fp

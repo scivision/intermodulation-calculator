@@ -1,3 +1,6 @@
+*.txt
+*.o
+im
 fp.cfg
 fp.dsk
 fp.ini
